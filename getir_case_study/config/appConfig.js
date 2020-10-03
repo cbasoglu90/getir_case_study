@@ -6,7 +6,7 @@ var appConfig = {
     },
     mongooseConnection: () => {
 
-        mongoose.connect("mongodb+srv://challengeUser:WUMglwNBaydH8Yvu@challenge-xzwqd.mongodb.net/getir-case-study", { retryWrites: true});
+        mongoose.connect(projectConfig.coreConfig.mongoDb, { retryWrites: true});
 
         mongoose.connection.on('open', () => {
             console.log(`Connected to ${appConfig.baseConfig.mongoDB} address successfully..`);
