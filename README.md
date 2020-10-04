@@ -1,4 +1,4 @@
-# Build A Restful Api With Node.Js, Express And MongoDB in scope of getir.com case study
+# Builds a Restful Api with Node.Js, Express And MongoDB in scope of getir.com case study
 This repository includes node.js case study sent by getir.com
 
 ## Requirements
