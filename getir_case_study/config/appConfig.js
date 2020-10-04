@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+// Adds mongo db connection configurations
 var appConfig = {
     baseConfig: {
         'mongoDB' : 'mongodb+srv://challengeUser:WUMglwNBaydH8Yvu@challenge-xzwqd.mongodb.net/getir-case-study',

@@ -3,23 +3,24 @@ const ValidationError = require('../error/ValidationError')
 
 var recordController = {
     getFilteredRecords: (filterRequest) => {
-
+        // Adds field validations
         if (!filterRequest.startDate) {
             throw new ValidationError({ startDate: 'required' })
-        }
-
-        if (typeof filterRequest.startDate !== 'string') {
-            throw new ValidationError({ startDate: 'must be a string' })
         }
 
         if (!filterRequest.endDate) {
             throw new ValidationError({ endDate: 'required' })
         }
         
-        if (typeof filterRequest.endDate !== 'string') {
-            throw new ValidationError({ endDate: 'must be a string' })
+        if (!filterRequest.minCount) {
+            throw new ValidationError({ endDate: 'required' })
         }
 
+        if (!filterRequest.maxCount) {
+            throw new ValidationError({ endDate: 'required' })
+        }
+        
+        // Fetches filtered records via data access layer
         var promise = recordAccess.getRecordsByFilter(filterRequest);
         return promise.then((records) => {
             if (records.success) {
@@ -39,6 +40,7 @@ var recordController = {
         });
     },
 
+    // Creates record function is written for creating test data in integation tests.
     createRecord: (record) => {
         var promise = recordAccess.addRecord(record);
         return promise.then((record) => {

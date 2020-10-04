@@ -2,6 +2,7 @@ const express = require('express');
 const recordController = require('../controller/recordController');
 const router = express.Router();
  
+// Routes post requests in order to filter records
 router.post('/filter', (req, res, next) => {
     console.log(req.body);
     var promise = recordController.getFilteredRecords(req.body);
@@ -16,6 +17,7 @@ router.post('/filter', (req, res, next) => {
     }).catch(next);
 });
 
+// Routes add requests in order to create record
 router.post('/add', (req, res, next) => {
     console.log(req.body);
     var promise = recordController.createRecord(req.body);

@@ -7,5 +7,7 @@ const recordSchema = new Schema({
     createdAt: Date,
     counts: [Number]
 });
+
+// Makes object relational mapping using schema and underlying records collection
 const RecordModel = mongoose.model('records', recordSchema);
 module.exports = RecordModel;

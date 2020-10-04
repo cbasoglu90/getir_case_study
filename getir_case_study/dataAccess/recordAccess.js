@@ -1,6 +1,7 @@
 const recordModel = require('../model/record');
 
 var recordAccess = {
+    // This function aggregates data using mongo aggregation pipeline
     getRecordsByFilter: (filter) => {
 
         return recordModel.aggregate([   
@@ -34,6 +35,7 @@ var recordAccess = {
         });
     },
 
+    // Inserts new record to mongo db.
     addRecord: (record) => {
         return recordModel.create(record).then((record) => {
             if (record) {
