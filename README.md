@@ -60,8 +60,13 @@ Route |  Http Method  | Post Body | Description
 ----- | ------------- | ----------| -----------
 localhost:3000/record |   `POST`  | {"startDate": "2016-01-26", "endDate" : "2018-01-26", "minCount" : 140, "maxCount" : 160 } | Filter records by startDate, endDate, minCount and maxCount
 
-## Developers
+## Integration tests
+Integration tests could be run with `npm run test-dev` command.
 
+## Dependencies
+Since node modules occupies significant size on disk, dependencies under package.json should be installed with npm. 
+
+## Developers
 Name Surname     | Github Repo Link
 ---------------- | ---------------- 
 *Çağdaş Başoğlu* | [Github Link](https://github.com/cbasoglu90/getir_case_study)
