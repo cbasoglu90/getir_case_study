@@ -8,12 +8,12 @@ router.post('/filter', (req, res, next) => {
 
     promise.then((records) => {
         if (records.success) {
-            res.send({code: records.code, msg: records.msg, records:records.records});
+            res.status(200).send({code: records.code, msg: records.msg, records:records.records});
         }
         else {
             res.status(404).send({ code: records.code, msg: records.msg });
         }
-    });
+    }).catch(next);
 });
 
 router.post('/add', (req, res, next) => {
