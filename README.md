@@ -60,6 +60,16 @@ Route |  Http Method  | Post Body | Description
 ----- | ------------- | ----------| -----------
 https://murmuring-thicket-28162.herokuapp.com/record/filter |   `POST`  | {"startDate": "2016-01-26", "endDate" : "2018-01-26", "minCount" : 140, "maxCount" : 160 } | Filter records by startDate, endDate, minCount and maxCount
 
+## Sample Curl Command
+```
+curl -H "Content-type: application/json" -X POST -d '{
+    "startDate": "2016-01-26", 
+    "endDate": "2018-02-02", 
+    "minCount": 2700, 
+    "maxCount": 3000 
+}' https://murmuring-thicket-28162.herokuapp.com/record/filter
+```
+
 ## Tests
 Tests could be run with `npm run test-dev` command.
 
