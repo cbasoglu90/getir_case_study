@@ -58,10 +58,10 @@ Response Sample:
 ## Endpoints
 Route |  Http Method  | Post Body | Description
 ----- | ------------- | ----------| -----------
-localhost:3000/record |   `POST`  | {"startDate": "2016-01-26", "endDate" : "2018-01-26", "minCount" : 140, "maxCount" : 160 } | Filter records by startDate, endDate, minCount and maxCount
+https://murmuring-thicket-28162.herokuapp.com/record/filter |   `POST`  | {"startDate": "2016-01-26", "endDate" : "2018-01-26", "minCount" : 140, "maxCount" : 160 } | Filter records by startDate, endDate, minCount and maxCount
 
-## Integration tests
-Integration tests could be run with `npm run test-dev` command.
+## Tests
+Tests could be run with `npm run test-dev` command.
 
 ## Dependencies
 Since node modules occupies significant size on disk, dependencies under package.json should be installed with npm. 
