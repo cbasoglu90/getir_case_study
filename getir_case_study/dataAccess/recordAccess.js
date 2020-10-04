@@ -32,6 +32,16 @@ var recordAccess = {
                 return { success: false, code: -1, msg: "Record not found with given filter!" }
             }
         });
+    },
+
+    addRecord: (record) => {
+        return recordModel.create(record).then((record) => {
+            if (record) {
+                return { success: true, code : 0, msg: "Record created successfully..", record: record}
+            } else {
+                return { success: false, code: -2, msg: "Record could not be created!" }
+            }
+        });
     }
 }
 

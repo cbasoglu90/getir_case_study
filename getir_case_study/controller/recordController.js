@@ -19,6 +19,27 @@ var recordController = {
                 };
             }
         });
+    },
+
+    createRecord: (record) => {
+        var promise = recordAccess.addRecord(record);
+        return promise.then((record) => {
+            if (record.success) {
+                return { 
+                    success: record.success, 
+                    code: record.code, 
+                    msg: record.msg,
+                    records: record.record
+                };            
+            }
+            else {
+                return { 
+                    success: record.success, 
+                    code : record.code, 
+                    msg: record.msg 
+                };
+            }
+        });
     }
 }
 
