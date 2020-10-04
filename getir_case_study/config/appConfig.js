@@ -2,11 +2,15 @@ const mongoose = require("mongoose");
 
 var appConfig = {
     baseConfig: {
-        'mongoDB' : 'mongodb+srv://challengeUser:WUMglwNBaydH8Yvu@challenge-xzwqd.mongodb.net/getir-case-study'
+        'mongoDB' : 'mongodb+srv://challengeUser:WUMglwNBaydH8Yvu@challenge-xzwqd.mongodb.net/getir-case-study',
     },
     mongooseConnection: () => {
 
-        mongoose.connect(projectConfig.coreConfig.mongoDb, { retryWrites: true});
+        mongoose.connect(appConfig.baseConfig.mongoDB, { 
+            retryWrites: true, 
+            useUnifiedTopology: true,
+            useNewUrlParser: true
+        });
 
         mongoose.connection.on('open', () => {
             console.log(`Connected to ${appConfig.baseConfig.mongoDB} address successfully..`);
