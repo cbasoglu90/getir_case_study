@@ -13,11 +13,11 @@ var recordController = {
         }
         
         if (!filterRequest.minCount) {
-            throw new ValidationError({ endDate: 'required' })
+            throw new ValidationError({ minCount: 'required' })
         }
 
         if (!filterRequest.maxCount) {
-            throw new ValidationError({ endDate: 'required' })
+            throw new ValidationError({ maxCount: 'required' })
         }
         
         // Fetches filtered records via data access layer

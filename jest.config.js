@@ -13,5 +13,6 @@ module.exports = {
       '<rootDir>/node_modules/',
       '<rootDir>/docs/',
       '<rootDir>/build/'
-    ]
+    ],
+    setupFilesAfterEnv: ['./jest.setup.js']
   };
